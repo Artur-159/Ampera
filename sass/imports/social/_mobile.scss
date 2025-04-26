@@ -1,0 +1,23 @@
+@include mediaTo($size960) {
+    .social_page .gallery_section li{
+        @include colSize(6);
+    }
+}
+
+@include mediaTo($size576) {
+    .social_page {
+        .gallery_section{
+            margin: 30px -5px 0;
+            li{
+                padding: 0 5px;
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
+
+
+
+
+
+

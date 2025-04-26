@@ -1,0 +1,10 @@
+@include mediaRange($size960, $size1440) {
+    .news_section {
+        .news_list {
+            margin: 0 -20px;
+            li {
+                padding: 0 20px;
+            }
+        }
+    }
+}

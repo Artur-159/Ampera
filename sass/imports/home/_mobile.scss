@@ -1,0 +1,66 @@
+@include mediaTo($size960) {
+    .news_section {
+        .news_list {
+            margin: 0 -10px;
+
+            li {
+                padding: 0 10px;
+            }
+        }
+
+        .news_description {
+            @include textOverflow(3, relative);
+        }
+    }
+    .customers_section {
+        margin-bottom: 0;
+
+        .customers_list li {
+            @include colSize(6);
+            margin-bottom: 70px;
+        }
+    }
+
+    .company_section {
+        .company_info {
+            padding: 10px 10px 15px;
+        }
+
+        .company_description {
+            @include textOverflow(3, relative);
+        }
+    }
+
+
+}
+
+@include mediaTo($size768) {
+    .programs_section {
+        .left_block,
+        .right_block {
+            @include colSize(12);
+            margin-bottom: 20px;
+        }
+    }
+    .news_section {
+        .news_list {
+            margin: 0;
+
+            li {
+                @include colSize(12);
+                padding: 0;
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
+
+@include mediaTo($size400) {
+    .customers_section {
+        margin-bottom: 0;
+
+        .customers_list li {
+            @include colSize(12);
+        }
+    }
+}

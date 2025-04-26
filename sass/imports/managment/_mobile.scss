@@ -1,0 +1,42 @@
+@include mediaTo($size960) {
+    .management_page {
+        .news_list {
+            margin: 0 -10px;
+
+            li {
+                padding: 0 10px;
+            }
+        }
+    }
+
+    // management_inner_page
+
+    .management_inner_page {
+        .left_block,
+        .right_block {
+            @include colSize(12)
+        }
+
+        .right_block {
+            padding-top: 30px;
+        }
+
+        .slider_section .inner_slider{
+            margin: 0;
+        }
+    }
+}
+
+@include mediaTo($size768) {
+    .management_page {
+        .news_list {
+            margin: 0;
+
+            li {
+                @include colSize(12);
+                padding: 0;
+                margin-bottom: 20px;
+            }
+        }
+    }
+}

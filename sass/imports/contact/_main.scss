@@ -1,0 +1,64 @@
+.contact_page {
+    @extend %bannerMarginBottom;
+
+    .section_title {
+        text-align: center;
+    }
+
+    .contact_row {
+        @extend %blockPaddingTop;
+        margin-left: 128px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .map_block {
+        @include colSize(5);
+    }
+
+    iframe {
+        position: relative;
+        border: none;
+        box-shadow: none;
+        max-width: 601px;
+    }
+
+    .contact_info {
+        margin-left: 60px;
+        @include colSize(5);
+    }
+
+    .contact_title {
+        font-size: 200%;
+        line-height: 28px;
+        font-family: $bold;
+        color: $black28;
+        margin-bottom: 30px;
+    }
+
+    .list_info {
+        @extend %standardList;
+
+        li {
+            margin-bottom: 30px;
+        }
+
+        div,
+        a {
+            display: flex;
+            @extend %middleText;
+            color: $black28;
+            @extend %siteColorHover;
+
+            &:before {
+                margin-right: 16px;
+                font-size: 2rem;
+                color: $siteColor;
+            }
+
+            span {
+                text-decoration: underline;
+            }
+        }
+    }
+}

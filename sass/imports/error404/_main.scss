@@ -1,0 +1,55 @@
+body {
+    height: 100%;
+    overflow: hidden;
+}
+
+.error_content {
+    width: 100%;
+    height: 100%;
+    @extend %centerBlock;
+    padding: 160px 0 0;
+
+    @include mediaRange($size768, $size960) {
+        padding-top: 120px;
+    }
+
+    @include mediaTo($size768) {
+        padding-top: 80px;
+    }
+
+    img {
+        display: inline-block;
+        width: 400px;
+        max-width: 100%;
+        vertical-align: top;
+        margin-bottom: 20px;
+
+        @include mediaTo($size768) {
+            max-width: 300px;
+        }
+    }
+
+    .error_block {
+        text-align: center;
+        max-width: 600px;
+        position: relative;
+        z-index: 10;
+    }
+
+    .text_list {
+        display: flex;
+        flex-direction: column;
+        padding: 16px 0 0;
+        max-width: 290px;
+        margin: 0 auto;
+        list-style-type: none;
+
+        li {
+            color: $siteColor;
+            @extend %blockTitle;
+            font-family: $bold;
+            text-align: start;
+        }
+    }
+
+}

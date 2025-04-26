@@ -1,0 +1,299 @@
+//main slider styles
+
+.main_section {
+    @include overHidden;
+    @include swiperSlide;
+
+    .main_slider {
+        @include overHidden;
+        border-radius: 8px;
+    }
+
+    .swiper-slide {
+        @include overHidden;
+        height: 47.78vw;
+        min-height: 510px;
+        max-height: 510px;
+        border-radius: 8px;
+
+        img {
+            @extend %coverLayer;
+            object-fit: cover;
+            object-position: bottom center;
+            border-radius: 8px;
+        }
+
+        &:before {
+            @include psevdoAbs;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(270deg, rgba($black, 0) 0%, $white 100%);
+            z-index: 1;
+        }
+
+        .page_container {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+        }
+    }
+
+    .btn_block {
+        margin: 16px $rowMargin 0;
+
+        .primary_btn,
+        .secondary_btn {
+            margin: 0 10px;
+            display: inline-flex;
+            align-items: center;
+            flex-direction: row-reverse;
+
+            &:before {
+                margin-left: 20px;
+                font-size: 2.2rem;
+            }
+        }
+    }
+
+    .slide_info {
+        position: relative;
+        z-index: 2;
+        max-width: 600px;
+        padding: 0 80px;
+        color: $black28;
+    }
+
+    .section_title {
+        color: inherit;
+        @include textOverflow(2, relative);
+    }
+
+    .block_description {
+        @include textOverflow(3, relative);
+        margin-top: 15px;
+    }
+
+    .category_block {
+        padding: 5px 19px;
+        @extend %centerBlock;
+        @extend %blockTitle;
+        color: $white;
+        background: $siteColor;
+        display: inline-block;
+        border-radius: 20px;
+        margin-bottom: 16px;
+    }
+
+    &:not(.swiper-initialized) .swiper-slide {
+        @include colSize(12);
+    }
+}
+
+//main slider styles end
+
+
+// social_list
+.link_description {
+    @extend %blockTitle;
+    color: $gray59;
+}
+
+.title_block {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    color: $gray59;
+    font-family: $bold;
+    float: left;
+    @extend %blockTitle;
+    @extend %iconElement;
+
+    &:before {
+        content: "\e90a";
+        font-size: 1.3rem;
+        margin: 0 10px;
+        color: $pink;
+        font-weight: 900;
+    }
+
+    &:after {
+        content: "\e90c";
+        color: $pink;
+        margin-right: 10px;
+    }
+}
+
+// social_list
+
+//news_section
+.news_section {
+    .news_list {
+        @extend %standardList;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -45px;
+
+        li {
+            @include colSize(4);
+            padding: 0 45px;
+        }
+    }
+
+    .news_block {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid $creamyF0;
+        border-radius: 8px;
+        height: 100%;
+
+        @media(hover: hover) {
+            &:has(a:hover) {
+                .image_block img {
+                    @include transStyle(scale(1.1));
+                }
+
+                .read_more,
+                .news_title {
+                    color: $siteColor;
+                }
+            }
+        }
+    }
+
+    .image_block {
+        @include overHidden;
+        border-radius: 8px;
+        margin: -1px;
+
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 428 / 237;
+            border-radius: 8px;
+            @include animStyle(all 0.3s);
+        }
+    }
+
+    .news_info {
+        padding: 16px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .news_date {
+        @extend %blockTitle;
+        color: $gray59;
+        margin-bottom: 8px;
+    }
+
+    .news_title {
+        @extend %blockTitle;
+        font-family: $bold;
+        margin-bottom: 8px;
+        color: $black28;
+        @include textOverflow(2, relative);
+        max-width: max-content;
+        width: 100%;
+    }
+
+    .news_description {
+        @extend %blockDescription;
+        margin-bottom: 8px;
+        @include textOverflow(2, relative);
+    }
+
+    .read_more {
+        margin-top: auto;
+    }
+
+}
+
+//news_section
+
+//Media
+
+@include mediaTo($size960) {
+    .main_section {
+        margin-bottom: 35px;
+
+        .main_slider {
+            .page_title,
+            .block_description {
+                -webkit-line-clamp: 4;
+            }
+
+            .swiper-slide {
+                height: auto;
+                max-height: none;
+                min-height: auto;
+                padding: 0;
+
+                &:before {
+                    display: none;
+                }
+
+                img {
+                    position: relative;
+                    top: auto;
+                    left: auto;
+                    height: 79.2vw;
+                    max-height: 380px;
+                }
+
+                .page_container {
+                    justify-content: unset;
+                }
+            }
+
+            .slide_info {
+                height: auto;
+                background: $white;
+                max-width: none;
+                padding: $colPadding 0;
+                text-align: center;
+                margin: 0 auto;
+            }
+        }
+
+    }
+}
+
+@include mediaTo($size400) {
+    .main_section {
+        .main_slider {
+            .swiper-slide {
+                img {
+                    max-height: 500px;
+                }
+            }
+
+            .btn_block {
+                margin: 0;
+
+                .secondary_btn,
+                .primary_btn {
+                    width: 100%;
+                    margin: 15px 0 0;
+                }
+            }
+        }
+    }
+
+    .customers_section {
+        margin-bottom: 0;
+
+        .customers_list li {
+            @include colSize(12);
+        }
+    }
+}
+
+//main slider styles end
+
+

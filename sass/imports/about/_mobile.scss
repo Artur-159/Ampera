@@ -1,0 +1,56 @@
+
+@include mediaTo($size960) {
+    .about_page {
+        .year_list li{
+            flex-direction: column;
+            &:before{
+                display: none;
+            }
+        }
+        .year_block{
+            margin-bottom: 10px;
+        }
+
+        .info_year {
+            padding-left: 0;
+        }
+
+        .inner_list,
+        .inner_team {
+            flex-direction: column;
+        }
+
+        .info_founder,
+        .info_team {
+            padding-top: 10px;
+        }
+    }
+
+}
+
+
+@include mediaTo($size576) {
+    .about_page {
+        .founder_list,
+        .team_list {
+            li {
+                @include colSize(12);
+            }
+        }
+
+        .founder_list li {
+            margin-bottom: 20px;
+        }
+
+        .img_block,
+        .info_founder,
+        .info_team {
+            margin: 0 auto;
+        }
+
+        .name_block {
+            text-align: center;
+        }
+    }
+}
+

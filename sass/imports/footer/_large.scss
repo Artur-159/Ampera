@@ -1,0 +1,11 @@
+@include mediaRange($size960, $size1280) {
+    .footer {
+        .copyrights {
+            padding-right: 10px;
+        }
+
+        .developer {
+            padding-left: 10px;
+        }
+    }
+}

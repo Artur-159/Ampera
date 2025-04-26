@@ -1,0 +1,68 @@
+@include mediaTo($size960) {
+    .footer {
+        &_menues {
+            @include colSize(7);
+        }
+
+        &_contacts {
+            @include standardCol(4);
+        }
+
+        &_bottom {
+            padding-bottom: 20px;
+        }
+
+    }
+}
+
+@include mediaTo($size768) {
+    .footer {
+        .developer {
+            padding-left: 0;
+            @include colSize(12);
+            margin-top: 20px;
+        }
+
+        &_contacts{
+            margin-top: 24px;
+            @include colSize(12);
+
+        }
+
+        &_menues {
+            @include colSize(12);
+            margin-top: 30px;
+        }
+    }
+}
+
+@include mediaTo($size480) {
+    .footer {
+        text-align: center;
+
+        &_menues {
+            flex-wrap: wrap;
+
+            > li {
+                @include colSize(12);
+
+                &:not(:first-child) {
+                    margin-top: 24px;
+                }
+            }
+        }
+
+        &_contacts {
+            @include colSize(12);
+        }
+
+
+        .socials_list {
+            justify-content: center;
+        }
+
+        &_bottom .page_container {
+            justify-content: center;
+        }
+    }
+}

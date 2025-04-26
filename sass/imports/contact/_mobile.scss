@@ -1,0 +1,34 @@
+@include mediaTo($size960) {
+    .contact_page {
+        .map_block {
+            @include standardCol(8);
+        }
+
+        .contact_row {
+            margin-left: 0;
+        }
+
+        .contact_info {
+            @include standardCol(4);
+            margin-left: 0;
+        }
+
+        .list_info li {
+            margin-bottom: 15px;
+        }
+    }
+}
+
+
+@include mediaTo($size768) {
+    .contact_page {
+        .contact_info,
+        .map_block {
+            @include standardCol(12);
+            margin-top: 15px;
+        }
+        iframe{
+            max-width: 100%;
+        }
+    }
+}

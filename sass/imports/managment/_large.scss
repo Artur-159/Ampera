@@ -1,0 +1,34 @@
+@include mediaRange($size960, $size1440) {
+    .management_page {
+        .news_list {
+            margin: 0 -20px;
+
+            li {
+                padding: 0 20px;
+            }
+        }
+    }
+
+    // management_inner_page
+
+    .management_inner_page {
+       .slider_section .inner_slider{
+            margin: 0 35px;
+        }
+        .content_row {
+            margin: 0 -20px;
+        }
+
+        .left_block,
+        .right_block {
+            padding: 0 20px;
+        }
+
+        .head_office,
+        .regional_office {
+            padding-top: 20px;
+        }
+    }
+
+    // management_inner_page
+}

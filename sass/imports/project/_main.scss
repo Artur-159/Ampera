@@ -1,0 +1,166 @@
+//project_page
+.project_page {
+    @extend %bannerMarginBottom;
+
+    .section_title {
+        text-align: center;
+    }
+
+    .head_filter {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 $rowMargin;
+        @extend %blockPaddingTop;
+
+        .primary_btn {
+            background: $siteColor;
+            width: 100%;
+            flex: 1;
+            margin-right: 10px;
+            max-width: 246px;
+        }
+    }
+
+    .field_block {
+        padding: 0 $colPadding;
+        flex: 1;
+    }
+
+    .result_block {
+        margin-bottom: 20px;
+    }
+
+    .result_list {
+        @extend %blockPaddingTop;
+
+        ul {
+            @extend %standardList;
+            margin: 0 -5px;
+            width: 100%;
+
+            li {
+                padding: 0 5px 8px;
+                display: inline-block;
+                vertical-align: top;
+            }
+        }
+
+        .block_info {
+            flex: 1;
+        }
+
+        .icon_arrow_left {
+            display: flex;
+            align-items: center;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+            @extend %blockTitle;
+            color: $black;
+            margin-top: 16px;
+            white-space: nowrap;
+
+            &:before {
+                padding-left: 10px;
+            }
+
+            &:after {
+                content: "";
+                max-width: 656px;
+                width: 100%;
+                height: 1px;
+                background: $creamyD9;
+                margin-right: 10px;
+            }
+        }
+
+        .title_block {
+            padding-right: 5px;
+
+            &:before {
+                display: none;
+            }
+        }
+    }
+
+    .result_title {
+        font-family: $bold;
+        color: $siteColor;
+        @extend %blockTitle;
+        display: block;
+        margin-bottom: 16px;
+    }
+
+    .filter_block {
+        display: flex;
+        margin-top: 20px;
+    }
+
+    .filter_list {
+        @extend %standardList;
+        display: flex;
+        flex-wrap: wrap;
+
+        li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+
+            &:not(:first-child):after {
+                font-size: 0;
+            }
+
+            &:not(:last-child):after {
+                content: "/";
+                margin: 0 24px;
+                font-weight: 900;
+                font-size: 1.8rem;
+            }
+        }
+
+        .title_block {
+            padding-right: 5px;
+
+            &:after,
+            &:before {
+                display: none;
+            }
+        }
+    }
+
+    .remove_btn {
+        font-size: 0;
+        line-height: 0;
+
+        &:before {
+            font-size: 1.8rem;
+            color: $black28;
+            @extend %siteColorHover;
+            margin-left: 8px;
+        }
+    }
+
+    .selected_items {
+        @extend %blockTitle;
+        color: $black28;
+        display: block;
+        margin-left: auto;
+        white-space: nowrap;
+    }
+
+    .block_inner {
+        background: $creamE1;
+        padding: 4px 8px 4px 8px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+    }
+
+    .no_result {
+        @extend %middleText;
+        font-family: $bold;
+        color: $gray59;
+        text-align: center;
+    }
+}
+
+//project_page

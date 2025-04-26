@@ -1,0 +1,30 @@
+@include mediaFrom($size960) {
+    .about_page .year_list li:not(:first-child):before {
+        @include psevdoAbs;
+        width: 2px;
+        height: 41px;
+        background: $siteColor;
+        top: 4px;
+        left: 25px;
+    }
+}
+
+@include mediaRange($size960, $size1440) {
+    .about_page .year_list li:not(:first-child):before {
+        top: -25px;
+    }
+}
+
+@include mediaRange($size960, $size1200) {
+    .about_page {
+        .inner_list,
+        .inner_team {
+            flex-direction: column;
+        }
+
+        .info_founder,
+        .info_team {
+            padding-top: 10px;
+        }
+    }
+}

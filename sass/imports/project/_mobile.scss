@@ -1,0 +1,55 @@
+@include mediaTo($size960) {
+    .project_page {
+        .field_block {
+            @include colSize(6);
+            margin-bottom: 15px;
+        }
+
+        .block_select .current,
+        .block_select {
+            max-width: 100%;
+        }
+
+        .primary_btn {
+            margin: 0 10px;
+        }
+
+        .filter_block {
+            flex-wrap: wrap;
+        }
+
+        .filter_list {
+            width: 100%;
+            order: 2;
+            margin-top: 15px;
+
+            li {
+                @include colSize(12);
+
+                &:after {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@include mediaTo($size576) {
+    .project_page {
+        .field_block {
+            @include colSize(12);
+            margin-bottom: 15px;
+        }
+
+        .head_filter .primary_btn,
+        .block_select {
+            max-width: 100%;
+        }
+
+        .block_inner {
+            width: 100%;
+            justify-content: space-between;
+            text-align: center;
+        }
+    }
+}

@@ -1,0 +1,5 @@
+@include mediaRange($size960, $size1440) {
+    .contact_page .contact_row{
+        margin-left: 50px
+    }
+}

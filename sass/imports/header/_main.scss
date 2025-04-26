@@ -1,0 +1,164 @@
+.header {
+    z-index: 100;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: $white;
+
+    &_top {
+        background: $siteColor;
+        @include zIndex(2);
+        padding: 8px 0;
+    }
+
+    .page_container {
+        display: flex;
+        align-items: center;
+    }
+
+    &_bottom {
+          padding: 22px 0;
+      }
+
+    .main_logo {
+        @include zIndex(101);
+        padding-right: 20px;
+        margin-right: auto;
+
+        a {
+            display: block;
+            font-size: 0;
+            line-height: 0;
+        }
+
+        img {
+            display: block;
+            height: 53px;
+            width: auto;
+            max-width: 354px;
+            object-fit: contain;
+        }
+    }
+
+    .socials_list {
+        @extend %standardRowList;
+        width: 100%;
+        justify-content: end;
+
+        li {
+            padding: 0 $colPadding;
+        }
+
+        a {
+            display: block;
+            font-size: 0;
+            line-height: 0;
+
+            &:before {
+                font-size: 2.4rem;
+                color: $white;
+            }
+        }
+    }
+
+    .language_list{
+        list-style-type: none;
+        padding: 0;
+        margin: 0 -10px;
+        display: flex;
+
+        li{
+            padding: 0 10px;
+        }
+        a{
+            border: none;
+            border-bottom: 1px solid transparent;
+            color: rgba($white,30%);
+            @extend %middleText;
+            padding: 0 0 2px;
+            &.selected{
+                color: $white;
+                font-family: $bold;
+            }
+        }
+    }
+
+    .main_menu {
+        @extend %standardList;
+
+        a {
+            color: inherit;
+            @extend %siteColorHover;
+        }
+
+        > li {
+            padding: 0 $colPadding;
+            position: relative;
+
+            &:last-child {
+                padding-right: 0;
+            }
+
+            &.opened {
+                > a,
+                &:after {
+                    color: $siteColor;
+                }
+            }
+
+            > a {
+                display: flex;
+                align-items: center;
+                @extend %blockTitle;
+                font-family: $bold;
+                text-transform: uppercase;
+                color: $black;
+                &.submenu_btn {
+                    @extend %iconElement;
+
+                    &:after {
+                        display: block;
+                        content: "\e901";
+                        font-size: 1.7rem;
+                        font-weight: 600;
+                        margin-left: 4px;
+                    }
+                }
+            }
+
+        }
+    }
+
+    .submenu_list {
+        display: none;
+        @extend %standardList;
+
+        ul {
+            @extend %standardList;
+        }
+
+        .submenu_list {
+            overflow-y: auto;
+            background: $white;
+        }
+
+        .submenu_btn {
+            @extend %iconElement;
+            position: relative;
+
+            &:after {
+                display: block;
+                content: "\e901";
+                font-size: 2rem;
+                margin-left: 4px;
+                position: absolute;
+                left: 100%;
+                top: 50%;
+                margin-top: -12px;
+                @include transStyle(rotate(-90deg));
+            }
+        }
+    }
+}
+

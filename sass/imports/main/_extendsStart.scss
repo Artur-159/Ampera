@@ -1,0 +1,359 @@
+%standardList {
+	@include standardList();
+}
+
+%standardRowList {
+	@include standardRowList();
+}
+
+%coverLayer {
+	@include coverLayer();
+}
+
+%fixedCover {
+	@include fixCoverLayer;
+}
+
+%verticalRotate {
+	@include transStyle(scaleX(-1));
+}
+
+%horizontalRotate {
+	@include transStyle(scaleY(-1));
+}
+
+%centeredImage {
+	> img {
+		@extend %coverLayer;
+		object-fit: cover;
+	}
+}
+
+%coverVideo {
+	iframe {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100% !important;
+		height: 100% !important;
+	}
+}
+
+%square {
+	@include overHidden();
+	@extend %centeredImage;
+	@extend %coverVideo;
+	&:before {
+		display: block;
+		content: "";
+		padding-bottom: 100%;
+	}
+}
+
+%almostSquare {
+	@include overHidden();
+	@extend %centeredImage;
+	@extend %coverVideo;
+	&:before {
+		display: block;
+		content: "";
+		padding-bottom: 75%;
+	}
+}
+
+%lessWide {
+	@include overHidden();
+	@extend %centeredImage;
+	@extend %coverVideo;
+	&:before {
+		display: block;
+		content: "";
+		padding-bottom: 62.5%;
+	}
+}
+
+%standardWide {
+	@include overHidden();
+	@extend %centeredImage;
+	@extend %coverVideo;
+	&:before {
+		display: block;
+		content: "";
+		padding-bottom: 56.25%;
+	}
+}
+
+%halfWide {
+	@include overHidden();
+	@extend %centeredImage;
+	@extend %coverVideo;
+	&:before {
+		display: block;
+		content: "";
+		padding-bottom: 50%;
+	}
+}
+
+%superWide {
+	@include overHidden();
+	@extend %centeredImage;
+	@extend %coverVideo;
+	&:before {
+		display: block;
+		content: "";
+		padding-bottom: 25%;
+	}
+}
+
+%standardNarrow {
+	@include overHidden();
+	@extend %centeredImage;
+	&:before {
+		display: block;
+		content: "";
+		padding-bottom: 177.78%;
+	}
+}
+
+%lessNarrow {
+	@include overHidden();
+	@extend %centeredImage;
+	&:before {
+		display: block;
+		content: "";
+		padding-bottom: 133.33%;
+	}
+}
+
+%iconElement {
+	&:before,
+	&:after {
+		font-family: 'icon' !important;
+		font-style: normal;
+		font-weight: normal;
+		font-variant: normal;
+		text-transform: none;
+		line-height: 1;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+}
+
+%noBlink {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+}
+
+%centerBlock {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+%centerInlineBlock {
+	display: inline-flex;
+	vertical-align: top;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+%linkTypeBtn {
+	border: none;
+	padding: 0;
+	background: transparent;
+}
+
+%middleText {
+	font-size: 160%;
+	line-height: 19px;
+}
+
+%standardText {
+	font-size: 140%;
+	line-height: 20px;
+}
+
+%smallText {
+	font-size: 120%;
+	line-height: 15px;
+}
+
+%pageTitle {
+	font-size: 3.4rem;
+	line-height: 1.22em;
+	font-family: $bold;
+	@include mediaRange($size960, $size1200) {
+		font-size: 3rem;
+	}
+	@include mediaRange($size576, $size960) {
+		font-size: 2.5rem;
+	}
+	@include mediaTo($size576) {
+		font-size: 2rem;
+	}
+}
+
+%sectionTitle {
+	font-size: 260%;
+	line-height: 33px;
+	font-family: $bold;
+
+	@include mediaRange($size1200, $size1440) {
+		font-size: 200%;
+		line-height: 32px;
+	}
+	@include mediaRange($size960, $size1200) {
+		font-size: 180%;
+		line-height: 28px;
+	}
+	@include mediaTo($size960) {
+		font-size: 180%;
+		line-height: 28px;
+	}
+}
+
+%blockTitle {
+	font-size: 160%;
+	line-height: 24px;
+
+	@include mediaTo($size960) {
+		font-size: 140%;
+		line-height: 20px;
+	}
+}
+
+%blockDescription {
+	font-size: 160%;
+	line-height: 24px;
+
+	@include mediaTo($size960) {
+		font-size: 140%;
+		line-height: 20px;
+	}
+}
+
+%standardBtn {
+	border: none;
+	height: 44px;
+	@extend %blockTitle;
+	@extend %centerInlineBlock;
+	border-radius: 8px;
+}
+
+%primaryBtn {
+	@extend %standardBtn;
+	background: $black28;
+	color: $white;
+	padding: 0 12px;
+	@include loading;
+	@extend %darkReverseHover;
+}
+
+%secondaryBtn {
+	@extend %standardBtn;
+	outline: 1px solid $black28 !important;
+	color: $black28;
+	padding: 0 12px;
+	background: transparent;
+	@include loading;
+	@extend %lightReverseHover;
+}
+
+%blockMarginBottom {
+	@include mediaFrom($size1440) {
+		margin-bottom: 60px;
+	}
+	@include mediaRange($size1200, $size1440) {
+		margin-bottom: 40px;
+	}
+	@include mediaRange($size960, $size1200) {
+		margin-bottom: 40px;
+	}
+	@include mediaTo($size960) {
+		margin-bottom: 30px;
+	}
+}
+
+
+%marginBottom {
+	@include mediaFrom($size1440) {
+		margin-bottom: 50px;
+	}
+	@include mediaRange($size1200, $size1440) {
+		margin-bottom: 30px;
+	}
+	@include mediaRange($size960, $size1200) {
+		margin-bottom: 30px;
+	}
+	@include mediaTo($size960) {
+		margin-bottom: 20px;
+	}
+}
+
+
+%blockMarginTop {
+	@include mediaFrom($size1440) {
+		margin-top: 60px;
+	}
+	@include mediaRange($size1200, $size1440) {
+		margin-top: 40px;
+	}
+	@include mediaRange($size960, $size1200) {
+		margin-top: 40px;
+	}
+	@include mediaTo($size960) {
+		margin-top: 30px;
+	}
+}
+
+%blockPaddingTop {
+	@include mediaFrom($size1440) {
+		padding-top: 50px;
+	}
+	@include mediaRange($size1200, $size1440) {
+		padding-top: 30px;
+	}
+	@include mediaTo($size1200) {
+		padding-top: 20px;
+	}
+}
+
+%bannerMarginBottom {
+	@include mediaFrom($size1440) {
+		margin-bottom: 120px;
+	}
+	@include mediaRange($size1200, $size1440) {
+		margin-bottom: 80px;
+	}
+	@include mediaTo($size1200) {
+		margin-bottom: 60px;
+	}
+}
+
+%bannerPaddingBottom {
+	@include mediaFrom($size1440) {
+		padding-bottom: 120px;
+	}
+	@include mediaRange($size1200, $size1440) {
+		padding-bottom: 80px;
+	}
+	@include mediaTo($size1200) {
+		padding-bottom: 60px;
+	}
+}
+
+%bannerPaddingTop {
+	@include mediaFrom($size1440) {
+		padding-top: 120px;
+	}
+	@include mediaRange($size1200, $size1440) {
+		padding-top: 80px;
+	}
+	@include mediaTo($size1200) {
+		padding-top: 60px;
+	}
+}

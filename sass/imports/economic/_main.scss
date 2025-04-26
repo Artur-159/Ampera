@@ -1,0 +1,18 @@
+.economic_page {
+    @extend %bannerPaddingBottom;
+
+    .img_block img{
+        display: block;
+        width: 100%;
+        max-width: max-content;
+        height: 100%;
+        aspect-ratio: 428 / 237;
+        border-radius: 8px;
+        margin: 0 auto;
+    }
+
+    .section_title {
+        margin: 20px 0 0;
+        text-align: center;
+    }
+}

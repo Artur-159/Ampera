@@ -1,0 +1,46 @@
+@include mediaTo($size768) {
+    .services_page {
+        padding: 30px 0 60px;
+
+        li {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .type_list {
+            @include colSize(12);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .services_list {
+            .link_item {
+                @include colSize(12);
+
+                &:not(:last-child) {
+                    margin-bottom: 10px;
+                }
+
+                &:last-child {
+                    margin-left: 0;
+                }
+            }
+
+            .type_list {
+                margin-bottom: 15px;
+                @include colSize(12);
+            }
+        }
+    }
+}
+
+
+@include mediaTo($size576) {
+    .services_page {
+        padding-bottom: 20px;
+
+        .services_list li {
+            padding: 10px 0;
+        }
+    }
+}

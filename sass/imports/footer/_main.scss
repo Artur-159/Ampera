@@ -1,0 +1,136 @@
+.footer {
+    opacity: 0;
+    @extend %opacity300;
+
+    &_logo {
+        font-family: $bold;
+        @extend %middleText;
+        color: $black28;
+        margin-bottom: 20px;
+    }
+
+    .page_row {
+        justify-content: space-between;
+    }
+
+    &_menues {
+        @include standardCol(7);
+        @extend %standardList;
+        display: flex;
+        justify-content: space-between;
+
+        ul {
+            @extend %standardList;
+
+            li:not(:first-child) {
+                margin-top: 8px;
+            }
+        }
+
+        a {
+            display: inline-block;
+            vertical-align: top;
+            color: $gray59;
+            @extend %standardText;
+            @extend %standardHover;
+        }
+    }
+
+    &_subtitle {
+        @extend %blockTitle;
+        color: $black28;
+        font-family: $bold;
+        margin-bottom: 20px;
+    }
+
+    &_contacts {
+        @include standardCol(2);
+    }
+
+    .contacts_list {
+        @extend %standardList;
+        @extend %standardText;
+        color: $gray59;
+
+        li:not(:first-child) {
+            margin-top: 12px;
+        }
+
+        a {
+            display: inline-block;
+            vertical-align: top;
+            max-width: 100%;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            @include overHidden;
+            color: inherit;
+            @extend %siteColorHover;
+        }
+    }
+
+    .socials_list {
+        @include customList(0 -10px, 0, none);
+        display: flex;
+
+        li {
+            padding-top: 12px;
+        }
+
+        a {
+            margin: 0 10px;
+            font-size: 0;
+            line-height: 0;
+            display: block;
+            color: $black;
+            @extend %opacityHover;
+
+            &:before {
+                display: block;
+                font-size: 2.4rem;
+            }
+        }
+    }
+
+    &_bottom {
+        padding: 40px 0 30px;
+        color: $gray59;
+        @extend %blockTitle;
+
+        .page_container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+
+    .copyrights {
+        padding-right: 16px;
+    }
+
+    .developer {
+        margin-left: auto;
+        padding-left: 16px;
+
+        a {
+            color: inherit;
+            font-size: 0;
+            line-height: 0;
+        }
+
+        img {
+            display: inline-block;
+            width: auto;
+            max-width: 116px;
+            height: 14px;
+            object-fit: contain;
+            margin-left: 10px;
+        }
+    }
+}
+
+.touch .footer {
+    .socials_list a {
+        margin: -10px 0;
+        padding: 10px;
+    }
+
+}

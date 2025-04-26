@@ -1,0 +1,47 @@
+@include mediaTo($size960) {
+    .news_page .news_section {
+        .news_list {
+            margin: 0 -10px;
+
+            li {
+                padding: 0 10px;
+                @include colSize(6);
+
+            }
+        }
+
+        .news_description {
+            @include textOverflow(3, relative);
+        }
+    }
+    .inner_page .gallery_section li{
+        @include colSize(6);
+    }
+}
+
+@include mediaTo($size576) {
+    .news_page .news_section {
+        .news_list {
+            margin: 0;
+
+            li {
+                @include colSize(12);
+                padding: 0;
+                margin-bottom: 20px;
+            }
+        }
+    }
+    .inner_page{
+        .standard_textpage img{
+            float: unset;
+            width: 100%;
+            margin: 0 auto 20px;
+        }
+        .gallery_section{
+            margin: 30px -5px 0;
+            li{
+                padding: 0 5px;
+            }
+        }
+    }
+}
